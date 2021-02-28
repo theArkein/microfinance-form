@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Membership Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+	<link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.5.min.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<style>
+	body{
+		background: var(--bs-light);
+	}
+	form{
+		margin-bottom: 30px;
+	}
+
+	label{
+		font-size: 0.8em;
+	}
+	
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+	  -moz-appearance: textfield;
+	}
+
+	.wrapper{
+		margin: auto;
+	}
+
+	.organization{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bs-green);
+		color: #fff;
+	}
+	.description{
+		margin: 20px 8px;
+	}
+	.logo{
+		width: 100px;
+		margin-right: 20px; 
+	}
+	.logo img{
+		width: 100%;
+	}
+	.organization .name h1{
+		margin: 5px 0px;
+	}
+	.section {
+		border: 1px solid #efefef;
+		border-radius: 5px;
+		margin: 20px 0;
+		padding-bottom: 20px;
+	}
+	.section .head{
+		background: var(--bs-green);
+		color: #fff;
+		padding: 12px 8px;
+		box-sizing: border-box;
+		margin:0;
+	}
+	.sample-applicant-with-id{
+		text-align: center;
+	}
+	.sample-applicant-with-id img{
+		width: 300px;
+	}
+	.date-converter{
+		position: fixed;
+		right: 12px;
+		bottom: 20px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		background: var(--bs-light);
+	}
+	.date-converter .icon{
+		background: var(--bs-green);
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: 76px;
+		height: 76px;
+		line-height: 1em;
+		border-radius: 50%;
+		font-size: 10px;
+		cursor: pointer;
+	}
+	.date-converter i{
+		font-size: 20px;
+		margin-bottom: 6px;
+	}
+	.date-converter iframe{
+		margin-right: 12px;
+		display: none;
+	}
+	.date-converter iframe body{
+	}
+	.message{
+		position: fixed;
+		top:20px;
+		left: 50%;
+		transform: translate(-50%);
+		display: none;
+	}
+	.message>div{
+		padding: 6px 12px;
+		border-radius: 12px
+	}
+	.loader{
+		position: fixed;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		display: none;
+		border-radius: 12px;
+	}
+	.loader>div{
+		width: 400px;
+		height: 400px;
+		background: var(--bs-green);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	svg {
+	  width: 100px;
+	  height: 100px;
+	  margin: 20px;
+	  display: inline-bloc;
+	}
+	select{
+		text-transform: capitalize;
+	}
+	.formPrint{
+		position: fixed;
+		top: 10px;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		overflow-y: scroll;
+		background-color: #fff;
+		padding: 50px;
+		display: none;
+		z-index: 10;
+	}
+</style>
+<body>
+
+<div class="wrapper container">
+
+	<div class="organization">
+		<div class="logo">
+			<img src="logo.jpg" alt="">
+		</div>
+		<div class="details">
+			<div class="name">
+				<h1 class="name-nepali">सहकारी सन्स्थ</h1>
+				<h1 class="name-english">Sahakari Sanstha</h1>
+			</div>
+			<div class="address">Dhangadhi-06, Kailali</div>
+		</div>
+	</div>
+
+	<div class="description text-justify">
+		Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, ut ullam adipisci deserunt non expedita eaque minima ex. Perspiciatis nisi deserunt omnis voluptatem numquam dicta, id recusandae eligendi soluta nulla! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit officia vel distinctio illum facilis ipsum natus, at nostrum aliquid, consequatur provident cum quod odio similique alias, perspiciatis repellendus. Voluptatibus, distinctio. dolor sit amet consectetur adipisicing elit. Pariatur ullam quod, maiores! Id eos vitae perferendis, minus sunt nisi dolor optio blanditiis consequuntur, distinctio tempora animi facilis iste placeat, quidem.
+	</div>
+
+	<form id="#form" enctype="multipart/form-data" method="POST" action="https://sahakaristore.lightwebgroup.com/customer/add.php">
+		
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Personal Details / व्यक्तिगत विवरण </div>
+			<div class="col-md-4">
+			    <label for="applicant_title" class="form-label">Title / शीर्षक <span class="text-danger"> *</span> </label>
+			    <select name="title" id="applicant_title" class="form-select" replaceLater>
+			      <option value="Mr." selected>Mr.</option>
+			      <option value="Mrs.">Mrs.</option>
+			      <option value="Miss">Miss</option>
+			      <option value="Minor">Minor</option>
+			  	</select>
+			</div>
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_first_name">Applicant First Name / आवेदकको पहिलो नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="first_name" id="applicant_first_name" placeholder="Ram" replaceLater>	
+			</div>
+
+			<div class=" col-md-4">
+				<label class="form-label" for="applicant_middle_name">Applicant Middle Name / आवेदकको बीचको  नाम </label>
+				<div class="">
+					<input type="text" class="form-control" name="mid_name" id="applicant_middle_name" placeholder="Bahadur" >
+				</div>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label class="form-label" for="applicant_last_name" >Applicant Last Name / आवेदकको थर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="last_name" id="applicant_last_name" placeholder="Thapa" replaceLater>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_dob_BS" class="form-label">Date Of Birth (BS) / जन्म मिति ( वि . सं ) <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="dob_bs" id="applicant_dob_BS" placeholder="2032-04-18" replaceLater>
+				<!-- <input type="text" id="nepali-datepicker" placeholder="Select Nepali Date"/> -->
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_dob_AD" class="form-label">Date Of Birth (AD) / जन्म मिति ( इस्वी सम्बतमा ) <span class="text-danger"> * </span></label>
+				<input type="date" class="form-control" name="dob_ad" id="applicant_dob_AD" placeholder="1994-02-23" replaceLater>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_age" class="form-label">Age / उमेर  <span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="age" id="applicant_age" placeholder="43" replaceLater>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_gender" class="form-label">Gender / लिंग <span class="text-danger"> * </span></label>
+				<select id="applicant_gender" name="gender" class="form-select" replaceLater>
+			      <option value="male" selected>Male/पुरुष </option>
+			      <option value="female">Female/महिला </option>
+			  	</select>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_marital_status" class="form-label">Marital Status / वैवाहिक स्थिति <span class="text-danger"> * </span></label>
+				<select id="applicant_marital_status" name="marital_status" class="form-select" replaceLater>
+			      <option value="unmarried" selected>Unmarried/अविवाहित</option>
+			      <option value="married">Married/विवाहित</option>
+			  	</select>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_nationality" class="form-label">Nationality / राष्ट्रीयता  <span class="text-danger"> * </span></label>
+				<select id="applicant_nationality" name="nationality" class="form-select" replaceLater>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="other">Other</option>
+			  	</select>
+			</div>
+
+			<div class="row gy-4 gx-5 applicant-reference-document-details">
+				<div class="col-md-6 form-label">Select Reference Document (पहिचान पत्र छान्नुहोस ): </div>
+				<div class="form-check col-sm-6 col-md-3">
+				  <input class="form-check-input" type="radio" name="reference_document_detail_type" id="applicant_reference_document_detail_citizenship" value="citizenship" checked>
+				  <label class="form-check-label" for="applicant_reference_document_detail_citizenship">
+				    Citizenship / नागरिकता
+				  </label>
+				</div>
+				<div class="form-check col-sm-6 col-md-3">
+				  <input class="form-check-input" type="radio" name="reference_document_detail_type" id="applicant_reference_document_detail_passport" value="passport">
+				  <label class="form-check-label" for="applicant_reference_document_detail_passport">
+				    Passport / पासपोर्ट 
+				  </label>
+				</div>	
+				
+			</div>
+			
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Correspondance Address / पत्राचार गर्ने ठेगाना</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_country" name="temp_country" class="form-select" replaceLater>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="Other">Other</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_district" name="temp_district" class="form-select" replaceLater>
+			    	<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_zone" name="temp_zone" class="form-select" replaceLater>
+			      	<option value="">--Select Zone--</option>
+	                <option value="Bagmati">Bagmati</option>
+	                <option value="Bheri">Bheri</option>
+	                <option value="Dhawalagiri">Dhawalagiri</option>
+	                <option value="Gandaki">Gandaki</option>
+	                <option value="Janakpur">Janakpur</option>
+	                <option value="Karnali">Karnali</option>
+	                <option value="Kosi">Kosi</option>
+	                <option value="Lumbini">Lumbini</option>
+	                <option value="Mahakali">Mahakali</option>
+	                <option value="Mechi">Mechi</option>
+	                <option value="Narayani">Narayani</option>
+	                <option value="Rapti">Rapti</option>
+	                <option value="Sagarmatha">Sagarmatha</option>
+	                <option value="Seti">Seti</option>
+			  	</select>
+			</div>
+
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_vdc">VDC or Municipality / गाविस वा नगरपालिका<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="temp_vdc" id="applicant_correspondance_address_vdc" placeholder="Dhangadhi" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_tole">Tole / टोल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="temp_tole" id="applicant_correspondance_address_tole" placeholder="Om Shanti Tole" value="" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_ward">Ward Number / वडा नम्बर<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="temp_ward" id="applicant_correspondance_address_ward" placeholder="04" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_block">Block Number / ब्लोक नम्बर </label>
+				<input type="text" class="form-control" name="temp_block" id="applicant_correspondance_address_block" placeholder="12" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_phone">Phone Number / फोन नम्बर </label>
+				<input type="text" class="form-control" name="temp_phone" id="applicant_correspondance_address_phone" placeholder="091525555" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="temp_mobile" id="applicant_correspondance_address_mobile" placeholder="04" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_email">Email / ईमेल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="temp_email" id="applicant_correspondance_address_email" placeholder="abc@gmail.com" replaceLater>	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5 permanenet-address-details">
+			<div class="head col-md-12">Permanent Address (Write Address Same As Citizenship) / स्थाई ठेगाना (ठेगाना नागरिकता अनुसार लेख्नुहोस )</div>
+
+			<div class="col-md-12">
+				<input class="form-check-input" type="checkbox" value="" name="permanent-address-checkbox" id="permanent-address-checkbox">
+				<label class="form-check-label" for="permanent-address-checkbox">
+				    Same as Correspondence Address / पत्राचार ठेगाना जस्तै 
+				</label>
+
+			</div>	
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_country" name="perm_country" class="form-select" replaceLater>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="other">Other</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_district" name="perm_district" class="form-select" replaceLater>
+			      	<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_zone" name="perm_zone" class="form-select" replaceLater>
+			    	<option value="">--Select Zone--</option>
+	                <option value="Bagmati">Bagmati</option>
+	                <option value="Bheri">Bheri</option>
+	                <option value="Dhawalagiri">Dhawalagiri</option>
+	                <option value="Gandaki">Gandaki</option>
+	                <option value="Janakpur">Janakpur</option>
+	                <option value="Karnali">Karnali</option>
+	                <option value="Kosi">Kosi</option>
+	                <option value="Lumbini">Lumbini</option>
+	                <option value="Mahakali">Mahakali</option>
+	                <option value="Mechi">Mechi</option>
+	                <option value="Narayani">Narayani</option>
+	                <option value="Rapti">Rapti</option>
+	                <option value="Sagarmatha">Sagarmatha</option>
+	                <option value="Seti">Seti</option>
+			  	</select>
+			</div>
+
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_vdc">VDC or Municipality / गाविस वा नगरपालिका <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="perm_vdc" id="applicant_permanent_address_vdc" placeholder="Dhamgadhi" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_tole">Tole / टोल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="perm_tole" id="applicant_permanent_address_tole" placeholder="Om Shanti Tole" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_ward">Ward Number / वडा नम्बर<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="perm_ward" id="applicant_permanent_address_ward" placeholder="04" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_block">Block Number / ब्लोक नम्बर </label>
+				<input type="text" class="form-control" name="perm_block" id="applicant_permanent_address_block" placeholder="12" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_phone">Phone Number / फोन नम्बर </label>
+				<input type="text" class="form-control" name="perm_phone" id="applicant_permanent_address_phone" placeholder="091525555" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="permanent-address-mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="permanent-address-mobile" id="applicant_permanent_address_mobile" placeholder="04" replaceLater>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_email">Email / ईमेल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="perm_email" id="applicant_permanent_address_email" placeholder="abc@gmail.com" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_landmark">Nearest Landmark / नजिकको ल्याण्डमार्क<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="perm_landmark" id="applicant_permanent_address_landmark" placeholder="Seti Zonal Hospital">	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Details Of Family Members / परिवारका सदस्यहरूको विवरण</div>
+			<div class="col-md-4">
+				<label class="form-label" for="grandfather_name">Grand Father's Name / हजुरबुबाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="grandfather_name" id="grandfather_name" placeholder="Shyam Bahadur Thapa" replaceLater>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="father_name">Father's Name / बुवाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="father_name" id="father_name" placeholder="Ravi Bahadur Thapa" replaceLater>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="mother_name">Mother's Name / आमाको नाम<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="Sabitri Thapa" replaceLater>	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Details Of Occupation / पेशाको विवरण</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="occupation_type" >Occupation Type / व्यवसायको प्रकार <span class="text-danger"> *</span> </label>
+			    <input type="text" id="occupation_type" name="occupation_type" class="form-control" placeholder="Farmer" replaceLater>
+			</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="type_of_business" >Type Of Business / व्यापारको प्रकार <span class="text-danger"> *</span> </label>
+			    <input type="text" id="type_of_business" name="type_of_business" class="form-control" placeholder="Agriculture" replaceLater >
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="organization_name">Organization Name / संस्थाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="organization_name" id="organization_name" placeholder="Nepal Rastra Bank" replaceLater >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="organization_address">Organization Address / संस्थाको ठेगाना  <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="organization_address" id="organization_address" placeholder="Dhangadhi, Kailali" replaceLater >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="designation">Designation / पद <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="designation" id="designation" placeholder="Manager" replaceLater >	
+			</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="annual_income" >Annual Income / बार्शिक आम्दानी <span class="text-danger"> *</span> </label>
+			    <select id="annual_income" name="annual_income" class="form-select" replaceLater>
+			      <option value="<100000" selected>Up to Rs 1,00,000</option>
+			      <option value="<500000" selected>Up to Rs 5,00,000</option>
+			      <option value="<1000000" selected>Up to Rs 10,00,000</option>
+			      <option value="<2000000" selected>Up to Rs 20,00,000</option>
+			      <option value="<5000000" selected>Up to Rs 50,00,000</option>
+			      <option value=">5000000">Above Rs 50,00,000</option>
+			  	</select>
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Upload Documents / कागजात अप्लोड गर्नुहोस् </div>
+			<div class="row gy-4 gx-5">
+				
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_photo">Applicant's Photo / आवेदकको फोटो <span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" name="applicant_photo" class="form-control" id="applicant_photo" replaceLater >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_location_map">Location Map of Applicant Residence / आवेदकको घरको स्थानीय नक्शा<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" name="location_map" class="form-control" id="applicant_location_map" replaceLater >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_sign">Applicant's Signature / आवेदक हस्ताक्षर <span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="signature" id="applicant_signature" replaceLater >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_thumb_print">Applicant's Thumb Print / आवेदकको ल्याप्चे<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="thumb_print" id="applicant_thumb_print" replaceLater >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_with_id">Applicant's Photo With Identity Document / आवेदकको पहिचान पत्रसहितको फोटो<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_with_citizenshio_or_passport" id="applicant_with_id" replaceLater >
+				</div>
+
+				<div class="col-sm-12 sample-applicant-with-id">
+					<p>Sample image of applicant holding identity document (आवेदकको पहिचान पत्रसहितको फोटो नमुना )</p>
+					<img src="sample_applicant_with_id.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="row gy-4 gx-5 applicant-reference-document-upload">
+				<div class="col-sm-3 form-label">Select Reference Document (पहिचान पत्र छान्नुहोस ): </div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="reference_document_upload_type" id="applicant_reference_document_upload_citizenship" value="citizenship" checked >
+				  <label class="form-check-label" for="applicant_reference_document_upload_citizenship">
+				    Citizenship / नागरिकता 
+				  </label>
+				</div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="reference_document_upload_type" id="applicant_reference_document_upload_passport" value="passport" >
+				  <label class="form-check-label" for="applicant_reference_document_upload_passport">
+				    Passport / पासपोर्ट
+				  </label>
+				</div>
+			</div>	
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col- md-12">Nominee Details / उम्मेदवारको विवरण</div>
+
+			<div class="row gy-4 gx-5 nominee-details">
+				<div class="col-sm-3 form-label">I have Nominee (मेरो  उम्मेदवार)</div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-true" value=true >
+				  <label class="form-check-label" for="select-nominee-true">
+				    Yes (छैन)
+				  </label>
+				</div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-false" value=false checked >
+				  <label class="form-check-label" for="select-nominee-false">
+				    No (छैन)
+				  </label>
+				</div>
+			</div>		
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Transaction Details</div>
+			<div class="col-md-4">
+				<label class="form-label" for="entry_fee">Entry Fee (Rs)</label>
+				<input type="text" class="form-control" name="entry_fee" id="entry_fee" value="100" disabled >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="membership_fee">Membership Fee (Rs)</label>
+				<input type="text" class="form-control" name="membership_fee" id="membership_fee" value="500" disabled >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="unit_share_price">Unit Share Price (Rs)</label>
+				<input type="text" class="form-control" name="unit_share_price" id="unit_share_price" value="100" disabled >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="applied_share_units">Applied Share Quantity (Units)<span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="applied_kitta_qty" id="applied_share_units" placeholder="100" replaceLater>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="total_amount">Total Amount Paid<span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="total_amount" id="total_amount" placeholder="10500" disabled replaceLater >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="transaction_receipt_photo">Transaction Receipt Photo<span class="text-danger"> *</span> </label>
+				<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="transaction_receipt" id="transaction_receipt_photo" replaceLater >
+			</div>
+		</div>
+
+		<div class="row gy-4 gx-5">
+			<button class="col-md-4 offset-md-4 btn btn-success" type="submit">Submit</button>
+		</div>
+
+	</form>
+</div>
+
+<!-- <div class="modal" id="formPrint" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" onclick="printForm()">Print</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="formPrint container" id="formPrint">
+	<button class="btn btn-success" onclick="printForm()">Print Form</button>
+	<button class="btn btn-warning" onclick="$('.formPrint').hide()">Close</button>
+  	<div class="printable ">
+		
+	        <style>
+	            .center {
+	            /* margin: auto; */
+	            width: 40%;
+	            border: 1px solid #000000;
+	            padding: 0.5%;
+	            }
+
+				table#demotable {
+					table-layout: fixed ;
+					width: 100% ;
+					border-collapse: collapse ;
+					border: 1px black solid ;
+				}
+				table#demotable td {
+					width: 50% ;
+					border-right: 1px black solid ;
+					padding: 10px ;
+				}
+
+				table#demotable .abcd {
+					width: 5% !important ;
+					border-right: 1px black solid ;
+					padding: 10px ;
+				}
+				table#demotable caption {
+					font-style: italic ;
+				}
+				.underline {
+					width: 200px;
+					border-bottom: 2px dotted #555;
+					display: inline-block;
+					text-align: center;
+				}
+
+				@media print{
+					#printable{
+						font-size: 12px;
+					}
+				}
+	        </style>
+			<!-- Simple Datatable start -->
+			<div class="card-box mb-30">
+				<div class="card-box mb-30 p-5">
+					<div id="printableArea">
+						<div class="row">
+							<div class="col-sm-8 my-auto">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550;">
+									श्रीमान् अध्यक्ष ज्यू,<br>
+									<span class="" style="border-bottom: 1px dotted #000000 !important;;">पारिश्रमिक बहुउद्देशीय सहकारी संस्था लि.</span><br>
+									<span class="" style="border-bottom: 1px dotted #000000 !important;;">धनगढी, कैलाली</span>
+								</p> 
+								
+							</div>
+							<div class="col-sm-4">
+								<!-- <div class="col-sm-2"></div> -->
+
+								<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
+									<img class="form_applicant_photo" style="height: 168px !important; width:100%"/>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<p style="line-height: 2;" class="text-center mb-0">
+								<span style="font-size: 15px; font-weight: 550;">विषय : </span>
+								<span style="font-size: 16px; font-weight: 900;">सदस्यताको लागि आवेदन ।</span>
+							</p> 
+							<p style="line-height: 2;" class="text-right mb-0">
+								<span style="font-size: 15px; font-weight: 550;">मिति : </span>
+								<span style="font-size: 15px; font-weight: 900;" id="spanid"><span class="current_date_bs">Date Here</span></span>
+							</p> 
+							<p style="line-height: 1.5;">
+								<span style="font-size: 15px; font-weight: 550;">महोदय, </span>
+							</p> 
+							<p style="word-spacing: 5px;" class="text-justify">
+								&emsp; मैले यस संस्थाको विनियम, निर्देशिका एवं बचत तथा ऋण सम्बन्धी शर्तहरु अध्ययन गरी सोमा मञ्जुर भई
+								नियमित रुपमा बचत गर्ने अभिप्रायले सदस्यताको लागि यो निवेदन पेश गरेको छु । साथै यस संस्थाको नियमानुसार
+								सदस्यताको लागि लाग्ने प्रवेश शुल्क वापत रू. <span class=" underline entry_fee">200</span> सदस्यता शुल्क रू. <span class=" underline membership_fee">500</span> र शेयर <span class=" underline share_units">10</span> थान वापत प्रति शेयरको रू. <span class=" underline unit_share_price">100</span>
+								ले हुन आउने रू. <span class=" underline total_share_price">1000</span> गरी जम्मा रू. <span class="underline total_amount"> 10000 </span>
+								(अक्षरेपी. ............................................. मात्र) यसै साथ संलग्न गरी सदस्यताका लागि अनुरोध गर्दछु ।
+								हाललाई म नियमित दैनिक/मासिक बचत रु. <span class="underline saving_amount">1000</span>
+								जम्मा गर्न सक्षम भएको व्यहोरा अवगत गराउँदछु ।
+								<table class="table table-borderless" id="demotable">
+									<thead>
+										<tr style="border: 1px solid black;">
+											<th scope="col" colspan="2" class="text-center">व्यक्तिगत विवरण</th>
+										</tr>
+									</thead>
+									<tbody style="border: 1px solid black;" class="col-sm-12">
+										<tr>
+											<td> नाम, थर: <span class="underline fullname">Ram Bahadur Thapa</span> </td>
+											<td> स्थायी ठेगाना: <span class="underline temp_address">Dhangadhi, Kailali</span> </td>
+										</tr>
+										<tr>
+											<td> जन्म मिति: <span class="underline dob_bs">2032-06-23</span> </td>
+											<td> नागरिकता नम्बर: <span class="underline citizenship_number">9876543</span> </td>
+										</tr>
+										<tr>
+											<td> फोन नं.: <span class="underline phone">09876543</span> </td>
+											<td> जारी मिति र जिल्ला: <span class="underline issue_date"></span> <span class="underline issue_district"></span></td>
+										</tr>
+										<tr>
+											<td> पेशा: <span class="profession underline">Farmer</span> </td>
+											<td> पत्राचार ठेगाना: <span class="correspondance_address underline">Dhangadhi Kailali</span> </td>
+										</tr>
+										<tr>
+											<td> बाबु/पतिको नामः <span class="underline father_or_spouse_name">Amar Bahadur Thapa</span> </td>
+											<td> कार्यालय: <span class="underline office"></span> </td>
+										</tr>
+										<tr>
+											<td> इमेल: <span class="underline email"></span> </td>
+											<td> बाजे / ससुराको नामः: <span class="underline grandfather_or_inlaw_name"></span> </td>
+										</tr>
+									</tbody>
+								</table>
+								<p style="word-spacing: 5px;" class="text-justify">मेरो शेषपछि वा मैले चाहेको अवस्थादेखि विनियमको अधिनमा रही <span class="underline nominee_relation"></span> नाता पर्ने 
+								<span class="underline nominee_district"></span> जिल्ला, <span class="underline nominee_vdc"></span> न.पा./गा.वि.स., 
+								वडा नं. <span class="underline ward"></span>
+								बस्ने देहायको दस्तखत नमूना र फोटो भएका श्री <span class="underline nominee_name"></span> लाई मैले लिएको ऋणमध्ये चुक्ता गर्न बाँकी ऋण र सोमा लाग्ने ब्याज 
+								कट्टी गरी बाँकी रहेको शेयर, नियमित बचत, आवधिक (मुद्दती) बचत एवं अन्य रकम भुक्तानी गर्न हकवाला मनोनयन गरेको छु ।
+							</p>
+							</p>
+						</div>
+						<div class="row">
+							<div class="col-sm-3 my-auto">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
+									इच्छाइएको व्यक्तिको व्यक्तिको फोटो					
+								</p> 
+								<div class="col-sm-12 border-bottom border-dark pb-1">
+									<div class="col-sm-12">
+										<!-- <div class="col-sm-2"></div> -->
+
+										<div class="center" class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
+											<img class="form_nominee_photo" style="height: 108px !important; width:100%" />
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="col-sm-3 my-auto">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
+									इच्छाइएको व्यक्तिको	दाँया दस्तखतको नमूना					
+								</p> 
+								<div class="col-sm-12 border-bottom border-dark pb-1">
+									<div class="col-sm-12">
+										<!-- <div class="col-sm-2"></div> -->
+
+										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
+											<img class="form_nominee_right_thumb_photo" style="height: 108px !important; width:100%"/>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="col-sm-3 my-auto">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
+									इच्छाइएको व्यक्तिको	औलाको रेखात्मक सही					
+								</p> 
+								<div class="col-sm-12 border-bottom border-dark pb-1">
+									<div class="col-sm-12">
+										<!-- <div class="col-sm-2"></div> -->
+
+										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
+											<img class="form_nominee_signature" style="height: 108px !important; width:100%"/>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="col-sm-3 my-auto">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550; margin-bottom: 22% !important;" class="text-center">
+									निवेदकको सही						
+								</p> 
+								<div class="col-sm-12 border-bottom border-dark pb-1">
+									<div class="col-sm-12">
+										<!-- <div class="col-sm-2"></div> -->
+
+										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
+											<img class="form_applicant_signature" style="height: 108px !important; width:100%"/>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						<p style="line-height: 2;" class="text-right mt-5">
+							<span style="font-size: 15px; font-weight: 550;">(नाम : </span>
+							<span style="font-size: 15px; font-weight: 900;" id="spanid">
+								Date Here
+							</span>
+						</p> 
+
+						<div class="row">
+							<div class="col-sm-12" style="border-bottom: 2px solid black; border-top: 2px solid black;">
+								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center my-auto">
+									कार्यालय प्रयोजनको लागि				
+								</p> 
+							</div>
+
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<td><span class="font-weight-bold">सदस्यता प्रदान गरेको मिति :
+											Date Here
+											</span>
+										</td>
+										<td><span class="font-weight-bold">स्वीकृत गर्नेको दस्तखत : </span></td>
+									</tr>
+									<tr>
+										<td><span class="font-weight-bold">सदस्यता नं.:</span></td>
+										<td><span class="font-weight-bold">नाम, थर:</span></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><span class="font-weight-bold">पद:</span></td>
+									</tr>
+								</tbody>
+							</table>
+
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+</div>
+
+
+
+<div class="message">
+	<div class="error alert-danger">Invalid Input GIven</div>
+</div>
+
+<div class="loader">
+	<div>
+		<svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		  viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+		<circle fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
+		<line fill="none" stroke-linecap="round" stroke="#fff" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">
+		  <animateTransform 
+		       attributeName="transform" 
+		       dur="2s"
+		       type="rotate"
+		       from="0 50 50"
+		       to="360 50 50"
+		       repeatCount="indefinite" />
+		</line>
+		<line fill="none" stroke-linecap="round" stroke="#fff" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
+		  <animateTransform 
+		       attributeName="transform" 
+		       dur="15s"
+		       type="rotate"
+		       from="0 50 50"
+		       to="360 50 50"
+		       repeatCount="indefinite" />
+		</line>
+		</svg>
+		<h3>Please wait. Form Uploading.</h3>
+	</div>	
+</div>
+
+<div class="date-converter">
+	<iframe class="converter-frame" src="https://www.hamropatro.com/widgets/dateconverter.php" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
+	<div class="icon">
+		<i class="bi bi-calendar3"></i>
+		<span>Date<br>Converter</span>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script>
+		
+	$( document ).ready(function() {
+
+		const passportDetailFields = `
+		<div class='row gy-4 gx-5 passport-details'>
+			<div class=' col-md-4'>
+				<label for='applicant_passport_number' class='form-label'>Passport Number <span class='text-danger'> * </span></label>
+				<input type='number' class='form-control' name='passport_number' id='applicant_passport_number' placeholder='2134' replaceLater>
+			</div>
+			<div class=' col-md-4'>
+			<label for='applicant_passport_expiry_date' class='form-label'>Passport Expiry Date (AD) <span class='text-danger'> * </span></label>
+			<input type='date' class='form-control' name='passport_expiry_date' id='applicant_passport_expiry_date' replaceLater>
+			</div>
+		</div>`
+		const citizenshipDetailFields = `
+		<div class="row gy-4 gx-5 citizenship-details">
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_number" class="form-label">Citizenship Number / नागरिकता नम्बर <span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="citizenship_number" id="applicant_citizenship_number" placeholder="2134" replaceLater>
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_district" class="form-label">Citizenship Issue District  <span class="text-danger"> * </span></label>
+				<select id="applicant_citizenship_issue_district" name="citizenship_issue_district" class="form-select" replaceLater >
+					<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
+				</select>
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_date_BS" class="form-label">Citizenship Issue Date (BS)  <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="citizenship_issue_date_bs" id="applicant_citizenship_issue_date_BS" placeholder="2032-02-12" replaceLater >
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_date_AD" class="form-label">Citizenship Issue Date (AD) <span class="text-danger"> * </span>
+				</label>
+				<input type="date" class="form-control" name="citizenship_issue_date_ad" id="applicant_citizenship_issue_date_AD" replaceLater>
+				</div>
+			</div>`
+		
+		const citizenshipUploadFields = `
+		<div class="row gy-4 gx-5 citizenship-upload">
+			<div class="col-md-6">
+				<label class="form-label" for="applicant_citizenship_front">Citizenship (Front) / नागरिकता अगाडी <span class="text-danger"> *</span> </label>
+				<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="citizenship_front" id="applicant_citizenship_front" replaceLater>
+			</div>
+			<div class="col-md-6"><label class="form-label" for="applicant_citizenship_back">Citizenship (Back) / नागरिकता पछाडी  <span class="text-danger"> *</span> </label>
+			<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="citizenship_back" id="applicant_citizenship_back" replaceLater>
+			</div>
+		</div>`
+		const passportUploadFields = `
+		<div class="row gy-4 gx-5 passport-upload"><div class="col-md-6">
+			<label class="form-label" for="applicant_passport_photo">Passport<span class="text-danger"> *</span> </label>
+			<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="passport_photo" id="passport_photo" replaceLater>
+			</div>
+		</div>`
+
+
+		const nomineeDetailFields = `<div class="row gy-4 gx-5 nominee-detail-fields">
+										<div class="col-md-4">
+										    <label for="nominee_title" class="form-label">Title / शीर्षक <span class="text-danger"> *</span> </label>
+										    <select id="nominee_title" name="nominee_title" class="form-select" replaceLater>
+										      <option value="Mr." selected>Mr.</option>
+										      <option value="Mrs.">Mrs.</option>
+										      <option value="Miss">Miss</option>
+										      <option value="Minor">Minor</option>
+										  	</select>
+										</div>
+
+									  	<div class="col-md-4">
+											<label class="form-label" for="nominee_name">Nominee Name / नाम <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_name" id="nominee_name" placeholder="Ram" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_relation">Relationship / नाम <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_relation" id="nominee_relation" placeholder="Ram" replaceLater>	
+										</div>
+
+										<div class=" col-md-4">
+											<label for="nominee-reference-document_type" class="form-label">Reference Document Type / <span class="text-danger"> * </span></label>
+											<select id="nominee-reference-document_type" name="nominee_reference_document_type" class="form-select" replaceLater>
+										      <option value="" selected>Select</option>
+										      <option value="citizenship">Citizenship</option>
+										      <option value="passport">Passport</option>
+										      <option value="certificate">Birth Certificate</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_number">Citizenship / Passport / Birth Certificate (नागरिकता / पासपोर्ट / जन्म प्रमाणपत्र)<span class="text-danger"> * </span></label>
+											<input type="number" class="form-control" name="nominee_reference_document_number" id="nominee_reference_document_number" placeholder="098765" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_issue_place">Place of Issue / जारी को स्थान <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_reference_document_issue_place" id="nominee_reference_document_issue_place" placeholder="Kailali, Nepal" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_issue_date">Date of Issue  <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_reference_document_issue_date" id="nominee_reference_document_issue_date" placeholder="2056-04-13" replaceLater>	
+										</div>
+										
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_age">Age <span class="text-danger"> * </span></label>
+											<input type="number" class="form-control" name="nominee_age" id="nominee_age" placeholder="18" replaceLater>	
+										</div>
+
+										<div class="col-md-4"></div>
+										<div class="col-md-4">
+										    <label for="nominee_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+										    <select id="nominee_country" name="nominee_country" class="form-select" replaceLater>
+										      <option value="Nepal" selected>Nepal</option>
+										      <option value="">India</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+										    <label for="nominee_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+										    <select id="nominee_district" name="nominee_district" class="form-select" replaceLater>
+											      	<option value="">--Select District--</option>
+											    	<option value="achham">achham</option> 
+													<option value="arghakhanchi">arghakhanchi</option> 
+													<option value="baglung">baglung</option> 
+													<option value="baitadi">baitadi</option> 
+													<option value="bajhang">bajhang</option> 
+													<option value="bajura">bajura</option> 
+													<option value="banke">banke</option> 
+													<option value="bara">bara</option> 
+													<option value="bardiya">bardiya</option> 
+													<option value="bhaktapur">bhaktapur</option> 
+													<option value="bhojpur">bhojpur</option> 
+													<option value="chitwan">chitwan</option> 
+													<option value="dadeldhura">dadeldhura</option> 
+													<option value="dailekh">dailekh</option> 
+													<option value="dang deukhuri">dang deukhuri</option> 
+													<option value="darchula">darchula</option> 
+													<option value="dhading">dhading</option> 
+													<option value="dhankuta">dhankuta</option> 
+													<option value="dhanusa">dhanusa</option> 
+													<option value="dholkha">dholkha</option> 
+													<option value="dolpa">dolpa</option> 
+													<option value="doti">doti</option> 
+													<option value="gorkha">gorkha</option> 
+													<option value="gulmi">gulmi</option> 
+													<option value="humla">humla</option> 
+													<option value="ilam">ilam</option> 
+													<option value="jajarkot">jajarkot</option> 
+													<option value="jhapa">jhapa</option> 
+													<option value="jumla">jumla</option> 
+													<option value="kailali">kailali</option> 
+													<option value="kalikot">kalikot</option> 
+													<option value="kanchanpur">kanchanpur</option> 
+													<option value="kapilvastu">kapilvastu</option> 
+													<option value="kaski">kaski</option> 
+													<option value="kathmandu">kathmandu</option> 
+													<option value="kavrepalanchok">kavrepalanchok</option> 
+													<option value="khotang">khotang</option> 
+													<option value="lalitpur">lalitpur</option> 
+													<option value="lamjung">lamjung</option> 
+													<option value="mahottari">mahottari</option> 
+													<option value="makwanpur">makwanpur</option> 
+													<option value="manang">manang</option> 
+													<option value="morang">morang</option> 
+													<option value="mugu">mugu</option> 
+													<option value="mustang">mustang</option> 
+													<option value="myagdi">myagdi</option> 
+													<option value="nawalparasi">nawalparasi</option> 
+													<option value="nuwakot">nuwakot</option> 
+													<option value="okhaldhunga">okhaldhunga</option> 
+													<option value="palpa">palpa</option> 
+													<option value="panchthar">panchthar</option> 
+													<option value="parbat">parbat</option> 
+													<option value="parsa">parsa</option> 
+													<option value="pyuthan">pyuthan</option> 
+													<option value="ramechhap">ramechhap</option> 
+													<option value="rasuwa">rasuwa</option> 
+													<option value="rautahat">rautahat</option> 
+													<option value="rolpa">rolpa</option> 
+													<option value="rukum">rukum</option> 
+													<option value="rupandehi">rupandehi</option> 
+													<option value="salyan">salyan</option> 
+													<option value="sankhuwasabha">sankhuwasabha</option> 
+													<option value="saptari">saptari</option> 
+													<option value="sarlahi">sarlahi</option> 
+													<option value="sindhuli">sindhuli</option> 
+													<option value="sindhupalchok">sindhupalchok</option> 
+													<option value="siraha">siraha</option> 
+													<option value="solukhumbu">solukhumbu</option> 
+													<option value="sunsari">sunsari</option> 
+													<option value="surkhet">surkhet</option> 
+													<option value="syangja">syangja</option> 
+													<option value="tanahu">tanahu</option> 
+													<option value="taplejung">taplejung</option> 
+													<option value="terhathum">terhathum</option> 
+													<option value="udayapur">udayapur</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+										    <label for="nominee_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+										    <select id="nominee_zone" name="nominee_zone" class="form-select" replaceLater>
+										    	<option value="">--Select Zone--</option>
+								                <option value="Bagmati">Bagmati</option>
+								                <option value="Bheri">Bheri</option>
+								                <option value="Dhawalagiri">Dhawalagiri</option>
+								                <option value="Gandaki">Gandaki</option>
+								                <option value="Janakpur">Janakpur</option>
+								                <option value="Karnali">Karnali</option>
+								                <option value="Kosi">Kosi</option>
+								                <option value="Lumbini">Lumbini</option>
+								                <option value="Mahakali">Mahakali</option>
+								                <option value="Mechi">Mechi</option>
+								                <option value="Narayani">Narayani</option>
+								                <option value="Rapti">Rapti</option>
+								                <option value="Sagarmatha">Sagarmatha</option>
+								                <option value="Seti">Seti</option>
+										  	</select>
+										</div>
+
+									  	<div class="col-md-4">
+											<label class="form-label" for="nominee_vdc">VDC or Municipality / गाविस वा नगरपालिका <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_vdc" id="nominee_vdc" placeholder="Dhangadhi" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_tole">Tole टोल <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_tole" id="nominee_tole" placeholder="Om Shanti Tole" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_ward">Ward Number / वडा नम्बर <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_ward" id="nominee_ward" placeholder="04" replaceLater>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_block">Block Number / ब्लोक नम्बर</label>
+											<input type="text" class="form-control" name="nominee_block" id="nominee_block" placeholder="12" >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_phone">Phone Number / फोन नम्बर </label>
+											<input type="text" class="form-control" name="nominee_phone" id="nominee_phone" placeholder="091525555" >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_mobile" id="nominee_mobile" placeholder="04" replaceLater >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_email">Email / ईमेल <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_email" id="nominee_email" placeholder="abc@gmail.com" replaceLater >	
+										</div>
+
+										<div class="col-md-4"></div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_sign">Nominee's Signature<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_sign" id="nominee_sign" replaceLater>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_thumb_print">Nominee's Thumb Print<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_thumb_print" id="nominee_thumb_print" replaceLater>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_photo">Nominee's Photo<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" id="nominee_photo" name="nominee_photo" replaceLater>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_reference_document_photo">Nominee's Reference Document Photo<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_reference_document_photo" id="nominee_reference_document_photo" replaceLater>
+										</div>
+									</div>	`
+
+
+		// Default Values to trigger dynamic form parts
+		$('form #applicant_reference_document_detail_citizenship')[0].checked=true
+		$('form #permanent-address-checkbox')[0].checked=false
+		$('form #applicant_reference_document_upload_citizenship')[0].checked=true
+		$('form #select-nominee-false')[0].checked=true
+
+
+		// Permanent Address 
+		$('form #permanent-address-checkbox').change(function (e){
+			if(e.currentTarget.checked){
+				$('#applicant_permanent_address_country')[0].value=$('#applicant_correspondance_address_country')[0].value
+				$('#applicant_permanent_address_district')[0].value=$('#applicant_correspondance_address_district')[0].value
+				$('#applicant_permanent_address_zone')[0].value=$('#applicant_correspondance_address_zone')[0].value
+				$('#applicant_permanent_address_vdc')[0].value=$('#applicant_correspondance_address_vdc')[0].value
+				$('#applicant_permanent_address_tole')[0].value=$('#applicant_correspondance_address_tole')[0].value
+				$('#applicant_permanent_address_ward')[0].value=$('#applicant_correspondance_address_ward')[0].value
+				$('#applicant_permanent_address_block')[0].value=$('#applicant_correspondance_address_block')[0].value
+				$('#applicant_permanent_address_phone')[0].value=$('#applicant_correspondance_address_phone')[0].value
+				$('#applicant_permanent_address_mobile')[0].value=$('#applicant_correspondance_address_mobile')[0].value
+				$('#applicant_permanent_address_email')[0].value=$('#applicant_correspondance_address_email')[0].value
+			}
+		})
+
+
+		// Reference Document Fields
+		// Trigger Default
+		$('.applicant-reference-document-details').append(citizenshipDetailFields)
+		$("#applicant_citizenship_issue_date_BS").nepaliDatePicker();
+
+
+		// Trigger On Change 
+		$('[name="reference_document_detail_type"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="passport"){
+				$('.applicant-reference-document-details').append(passportDetailFields)
+				$('.citizenship-details').remove()
+
+			} else{
+				$('.applicant-reference-document-details').append(citizenshipDetailFields)
+				$("#applicant_citizenship_issue_date_BS").nepaliDatePicker();
+				$('.passport-details').remove()
+			}
+		})
+
+		// Reference Document Upload Fields
+		// Trigger Default
+		$('.applicant-reference-document-upload').append(citizenshipUploadFields)
+
+		// Trigger On Change 
+		$('[name="reference_document_upload_type"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="passport"){
+				$('.applicant-reference-document-upload').append(passportUploadFields)
+				$('.citizenship-upload').remove()
+
+			} else{
+				$('.applicant-reference-document-upload').append(citizenshipUploadFields)
+				$('.passport-upload').remove()
+			}
+		})
+
+		// Select Nominee Detail Fields
+		// Trigger Default
+
+		// Trigger On Change 
+		$('[name="select_nominee"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="true"){
+				$('.nominee-details').append(nomineeDetailFields)
+				$("#nominee_reference_document_issue_date").nepaliDatePicker();
+
+			} else{
+				$('.nominee-detail-fields').remove()
+			}
+		})
+
+
+		// Submit Form
+		$('form').submit(function (e){
+			e.preventDefault();
+			let formData = new FormData($('form')[0]);
+			let dataJson = {}
+			for (let pair of formData.entries()) {
+			  // console.log(pair[0] + " - " + pair[1]);
+			  dataJson[pair[0]] = pair[1]
+			}
+			console.log(dataJson)
+			const url = 'https://sahakaristore.lightwebgroup.com/customer/add.php'
+			$('.loader').show();
+		  	fetch(url, {
+			    method: 'POST',
+			    body: dataJson,
+			    contentType: 'multipart/form-data'
+		  	}).then(response => response.json()).then(data => { 
+				$('.loader').hide()
+		  		console.log(data)
+		  		window.alert(data.message) 
+		   		showFormPrint();
+		  	})
+		})
+
+		//  Validations
+
+		$('input[type="file"]').change(function (e){
+            var fileExtension = ['jpeg', 'jpg', 'png'];
+            if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                alert("Only photos are allowed (jpeg/png/jpg)");
+            	$(this).value = ""
+            }
+ 		}) 
+
+ 		$('#applied_share_units').change(function (){
+ 			const ENTRY_FEE = 100;
+ 			const MEMBERSHIP_FEE = 500;
+ 			const UNIT_SHARE_PRICE = 100;
+ 			const APPLIED_SHARE_UNITS = this.value
+ 			const TOTAL_AMOUNT = ENTRY_FEE + MEMBERSHIP_FEE + (APPLIED_SHARE_UNITS * UNIT_SHARE_PRICE)
+ 			$('#total_amount')[0].value = TOTAL_AMOUNT
+ 		}) 
+
+
+
+		$('.date-converter .icon').click(function(){
+			$('.date-converter .converter-frame').toggle()
+			// console.log($( ".date-converter i" ).hasClass("bi-calendar3"))
+
+			if($( ".date-converter i" ).hasClass( "bi-calendar3")){
+				$( ".date-converter i" ).addClass( "bi-x-circle");
+				$( ".date-converter i" ).removeClass( "bi-calendar3");
+			}
+			else {
+				$( ".date-converter i" ).removeClass( "bi-x-circle");
+				$( ".date-converter i" ).addClass( "bi-calendar3");
+			}		
+		})
+
+	});
+
+
+</script>
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.5.min.js" type="text/javascript"></script>
+<script>
+	$("#applicant_dob_BS").nepaliDatePicker();
+	
+</script>
+<script type="text/javascript">
+	function printForm(){
+			// window.print()
+			var printContents = document.querySelector('#printableArea').innerHTML;
+		     var originalContents = document.body.innerHTML;
+
+		     document.body.innerHTML = printContents;
+
+		     window.print();
+
+		     document.body.innerHTML = originalContents;
+		}		
+	function showFormPrint(){
+		$('.formPrint').show()
+		const currentDate = NepaliFunctions.GetCurrentBsDate(); 
+	    $('.current_date_bs')[0].innerText = `${currentDate.year}-${currentDate.month}-${currentDate.day}`
+	    $('.entry_fee')[0].innerText = "Entry Fee"
+	    $('.membership_fee')[0].innerText = "Membership Fee"
+	    $('.unit_share_price')[0].innerText = "Share Unit Price"
+	    $('.share_units')[0].innerText = "Share Units"
+	    $('.total_share_price')[0].innerText = "Total Share Price"
+	    $('.total_amount')[0].innerText = "Total Amount"
+	    $('.saving_amount')[0].innerText = "Saving Amount"
+
+	    $('.form_applicant_photo').attr('src', URL.createObjectURL($('#applicant_photo')[0].files[0]));
+	    $('.form_applicant_signature').attr('src', URL.createObjectURL($('#applicant_signature')[0].files[0]));
+
+		console.log($('[name="select_nominee"]')[0].checked)
+		console.log($('#nominee_thumb_print'))
+    	if($('[name="select_nominee"]')[0].checked){
+    		$('.form_nominee_right_thumb_photo').attr('src', URL.createObjectURL($('#nominee_thumb_print')[0].files[0]));
+    	    $('.form_nominee_photo').attr('src', URL.createObjectURL($('#nominee_photo')[0].files[0]));
+    	    $('.form_nominee_signature').attr('src', URL.createObjectURL($('#nominee_sign')[0].files[0]));
+    	}
+
+	} 
+</script>
+</body>
+</html>
