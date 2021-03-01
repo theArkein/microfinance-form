@@ -411,11 +411,6 @@
 			</div>
 
 			<div class="col-md-4">
-				<label class="form-label" for="applicant_correspondance_address_block">Block Number / ब्लोक नम्बर </label>
-				<input type="text" class="form-control" name="temp_block" id="applicant_correspondance_address_block" placeholder="12" >	
-			</div>
-
-			<div class="col-md-4">
 				<label class="form-label" for="applicant_correspondance_address_phone">Phone Number / फोन नम्बर </label>
 				<input type="text" class="form-control" name="temp_phone" id="applicant_correspondance_address_phone" placeholder="091525555" >	
 			</div>
@@ -568,10 +563,6 @@
 				<input type="text" class="form-control" name="perm_ward" id="applicant_permanent_address_ward" placeholder="04" replaceLater>	
 			</div>
 
-			<div class="col-md-4">
-				<label class="form-label" for="applicant_permanent_address_block">Block Number / ब्लोक नम्बर </label>
-				<input type="text" class="form-control" name="perm_block" id="applicant_permanent_address_block" placeholder="12" >	
-			</div>
 
 			<div class="col-md-4">
 				<label class="form-label" for="applicant_permanent_address_phone">Phone Number / फोन नम्बर </label>
@@ -827,12 +818,13 @@
 								</p> 
 								
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 style">
 								<!-- <div class="col-sm-2"></div> -->
 
-								<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
-									<img class="form_applicant_photo" style="height: 168px !important; width:100%"/>
+								<div class="center" style="">
+									<img class="form_applicant_photo" style="width: 100px !important; height: 100px !important" />
 								</div>
+
 							</div>
 						</div>
 						<div class="col-sm-12">
@@ -863,32 +855,32 @@
 									</thead>
 									<tbody style="border: 1px solid black;" class="col-sm-12">
 										<tr>
-											<td> नाम, थर: <span class="underline fullname">Ram Bahadur Thapa</span> </td>
-											<td> स्थायी ठेगाना: <span class="underline temp_address">Dhangadhi, Kailali</span> </td>
+											<td> नाम, थर: <span class="underline printForm fullname">Ram Bahadur Thapa</span> </td>
+											<td> स्थायी ठेगाना: <span class="underline printForm temp_address">Dhangadhi, Kailali</span> </td>
 										</tr>
 										<tr>
-											<td> जन्म मिति: <span class="underline dob_bs">2032-06-23</span> </td>
-											<td> नागरिकता नम्बर: <span class="underline citizenship_number">9876543</span> </td>
+											<td> जन्म मिति: <span class="underline printForm dob_bs">2032-06-23</span> </td>
+											<td> नागरिकता नम्बर: <span class="underline printForm citizenship_number">9876543</span> </td>
 										</tr>
 										<tr>
-											<td> फोन नं.: <span class="underline phone">09876543</span> </td>
-											<td> जारी मिति र जिल्ला: <span class="underline issue_date"></span> <span class="underline issue_district"></span></td>
+											<td> फोन नं.: <span class="underline printForm phone">09876543</span> </td>
+											<td> जारी मिति र जिल्ला: <span class="underline printForm issue_date"></span> <span class="underline printForm issue_district"></span></td>
 										</tr>
 										<tr>
-											<td> पेशा: <span class="profession underline">Farmer</span> </td>
-											<td> पत्राचार ठेगाना: <span class="correspondance_address underline">Dhangadhi Kailali</span> </td>
+											<td> पेशा: <span class="printForm profession underline">Farmer</span> </td>
+											<td> पत्राचार ठेगाना: <span class="correspondance_address printForm underline">Dhangadhi Kailali</span> </td>
 										</tr>
 										<tr>
-											<td> बाबु/पतिको नामः <span class="underline father_or_spouse_name">Amar Bahadur Thapa</span> </td>
-											<td> कार्यालय: <span class="underline office"></span> </td>
+											<td> बाबु/पतिको नामः <span class="underline printForm father_or_spouse_name">Amar Bahadur Thapa</span> </td>
+											<td> कार्यालय: <span class="underline printForm office"></span> </td>
 										</tr>
 										<tr>
-											<td> इमेल: <span class="underline email"></span> </td>
-											<td> बाजे / ससुराको नामः: <span class="underline grandfather_or_inlaw_name"></span> </td>
+											<td> इमेल: <span class="underline printForm email"></span> </td>
+											<td> बाजे / ससुराको नामः: <span class="underline printForm grandfather_or_inlaw_name"></span> </td>
 										</tr>
 									</tbody>
 								</table>
-								<p style="word-spacing: 5px;" class="text-justify">मेरो शेषपछि वा मैले चाहेको अवस्थादेखि विनियमको अधिनमा रही <span class="underline nominee_relation"></span> नाता पर्ने 
+								<p style="word-spacing: 5px;" class="nomineeDiv text-justify">मेरो शेषपछि वा मैले चाहेको अवस्थादेखि विनियमको अधिनमा रही <span class="underline nominee_relation"></span> नाता पर्ने 
 								<span class="underline nominee_district"></span> जिल्ला, <span class="underline nominee_vdc"></span> न.पा./गा.वि.स., 
 								वडा नं. <span class="underline ward"></span>
 								बस्ने देहायको दस्तखत नमूना र फोटो भएका श्री <span class="underline nominee_name"></span> लाई मैले लिएको ऋणमध्ये चुक्ता गर्न बाँकी ऋण र सोमा लाग्ने ब्याज 
@@ -897,7 +889,7 @@
 							</p>
 						</div>
 						<div class="row">
-							<div class="col-sm-3 my-auto">
+							<div class="nomineeDiv col-sm-3 my-auto">
 								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
 									इच्छाइएको व्यक्तिको व्यक्तिको फोटो					
 								</p> 
@@ -905,14 +897,15 @@
 									<div class="col-sm-12">
 										<!-- <div class="col-sm-2"></div> -->
 
-										<div class="center" class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
-											<img class="form_nominee_photo" style="height: 108px !important; width:100%" />
+										<div class="center" class="center" style="">
+											<img class="form_nominee_photo" style="max-width: 200px !important; max-height: 200px !important" />
 										</div>
+
 									</div>
 								</div>
 								
 							</div>
-							<div class="col-sm-3 my-auto">
+							<div class="nomineeDiv col-sm-3 my-auto">
 								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
 									इच्छाइएको व्यक्तिको	दाँया दस्तखतको नमूना					
 								</p> 
@@ -920,14 +913,14 @@
 									<div class="col-sm-12">
 										<!-- <div class="col-sm-2"></div> -->
 
-										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
-											<img class="form_nominee_right_thumb_photo" style="height: 108px !important; width:100%"/>
+										<div class="center" style="">
+											<img class="form_nominee_right_thumb_photo" style="max-width: 200px !important; max-height: 50px !important"/>
 										</div>
 									</div>
 								</div>
 								
 							</div>
-							<div class="col-sm-3 my-auto">
+							<div class="nomineeDiv col-sm-3 my-auto">
 								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center">
 									इच्छाइएको व्यक्तिको	औलाको रेखात्मक सही					
 								</p> 
@@ -936,7 +929,7 @@
 										<!-- <div class="col-sm-2"></div> -->
 
 										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
-											<img class="form_nominee_signature" style="height: 108px !important; width:100%"/>
+											<img class="form_nominee_signature" style="width: 200px !important; height: 50px !important"/>
 										</div>
 									</div>
 								</div>
@@ -950,23 +943,23 @@
 									<div class="col-sm-12">
 										<!-- <div class="col-sm-2"></div> -->
 
-										<div class="center" style="width: 100% !important; margin: auto !important; margin-bottom: 2% !important; border: 0 !important;">
-											<img class="form_applicant_signature" style="height: 108px !important; width:100%"/>
+										<div class="center">
+											<img class="form_applicant_signature" style="width: 200px !important; height: 50px !important"/>
 										</div>
 									</div>
 								</div>
 								
 							</div>
 							
-						</div>
+						</div><!-- 
 						<p style="line-height: 2;" class="text-right mt-5">
 							<span style="font-size: 15px; font-weight: 550;">(नाम : </span>
-							<span style="font-size: 15px; font-weight: 900;" id="spanid">
+							<span style="font-size: 15px; font-weight: 900;" id="spanid" class="current_date_bs">
 								Date Here
 							</span>
-						</p> 
+						</p>  -->
 
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-sm-12" style="border-bottom: 2px solid black; border-top: 2px solid black;">
 								<p style="line-height: 2; font-size: 16px; font-weight: 550;" class="text-center my-auto">
 									कार्यालय प्रयोजनको लागि				
@@ -994,7 +987,7 @@
 							</table>
 
 							
-						</div>
+						</div> -->
 						
 					</div>
 				</div>
@@ -1359,10 +1352,6 @@
 											<input type="text" class="form-control" name="nominee_ward" id="nominee_ward" placeholder="04" replaceLater>	
 										</div>
 
-										<div class="col-md-4">
-											<label class="form-label" for="nominee_block">Block Number / ब्लोक नम्बर</label>
-											<input type="text" class="form-control" name="nominee_block" id="nominee_block" placeholder="12" >	
-										</div>
 
 										<div class="col-md-4">
 											<label class="form-label" for="nominee_phone">Phone Number / फोन नम्बर </label>
@@ -1419,7 +1408,6 @@
 				$('#applicant_permanent_address_vdc')[0].value=$('#applicant_correspondance_address_vdc')[0].value
 				$('#applicant_permanent_address_tole')[0].value=$('#applicant_correspondance_address_tole')[0].value
 				$('#applicant_permanent_address_ward')[0].value=$('#applicant_correspondance_address_ward')[0].value
-				$('#applicant_permanent_address_block')[0].value=$('#applicant_correspondance_address_block')[0].value
 				$('#applicant_permanent_address_phone')[0].value=$('#applicant_correspondance_address_phone')[0].value
 				$('#applicant_permanent_address_mobile')[0].value=$('#applicant_correspondance_address_mobile')[0].value
 				$('#applicant_permanent_address_email')[0].value=$('#applicant_correspondance_address_email')[0].value
@@ -1490,7 +1478,7 @@
 			  dataJson[pair[0]] = pair[1]
 			}
 			console.log(dataJson)
-			const url = 'https://sahakaristore.lightwebgroup.com/customer/add.php'
+			const url = 'https://koreareturnee.com/api/customer/add.php'
 			$('.loader').show();
 		  	fetch(url, {
 			    method: 'POST',
@@ -1564,19 +1552,39 @@
 		$('.formPrint').show()
 		const currentDate = NepaliFunctions.GetCurrentBsDate(); 
 	    $('.current_date_bs')[0].innerText = `${currentDate.year}-${currentDate.month}-${currentDate.day}`
-	    $('.entry_fee')[0].innerText = "Entry Fee"
-	    $('.membership_fee')[0].innerText = "Membership Fee"
-	    $('.unit_share_price')[0].innerText = "Share Unit Price"
-	    $('.share_units')[0].innerText = "Share Units"
-	    $('.total_share_price')[0].innerText = "Total Share Price"
-	    $('.total_amount')[0].innerText = "Total Amount"
-	    $('.saving_amount')[0].innerText = "Saving Amount"
+
+	    $('.entry_fee')[0].innerText = $('#entry_fee')[0].value
+	    $('.membership_fee')[0].innerText = $('#membership_fee')[0].value
+	    $('.unit_share_price')[0].innerText = $('#unit_share_price')[0].value
+	    $('.share_units')[0].innerText = $('#applied_share_units')[0].value
+	    $('.total_share_price')[0].innerText = $('#applied_share_units')[0].value * $('#unit_share_price')[0].value
+	    $('.total_amount')[0].innerText = $('#total_amount')[0].value
+	    $('.saving_amount')[0].innerText = "00"
+
+	    $('.printForm.fullname')[0].innerText = $('#applicant_first_name')[0].value + " " + $('#applicant_middle_name')[0].value + " " + $('#applicant_last_name')[0].value
+
+	    $('.printForm.dob_bs')[0].innerText = $('#applicant_dob_BS')[0].value
+	    $('.printForm.phone')[0].innerText = $('#applicant_correspondance_address_phone')[0].value
+	    $('.printForm.profession')[0].innerText = $('#occupation_type')[0].value
+	    $('.printForm.father_or_spouse_name')[0].innerText = $('#father_name')[0].value
+	    $('.printForm.grandfather_or_inlaw_name')[0].innerText = $('#grandfather_name')[0].value
+	    $('.printForm.email')[0].innerText = $('#applicant_correspondance_address_email')[0].value
+	    $('.printForm.citizenship_number')[0].innerText = $('#applicant_citizenship_number')[0].value
+	    $('.printForm.issue_date')[0].innerText = $('#applicant_citizenship_issue_date_BS')[0].value 
+		$('.printForm.issue_district')[0].innerText = $('#applicant_citizenship_issue_district')[0].value
+	    $('.printForm.temp_address')[0].innerText = $('#applicant_correspondance_address_district')[0].value + ", " + $('#applicant_correspondance_address_country')[0].value
+	    $('.printForm.correspondance_address')[0].innerText = $('#applicant_correspondance_address_district')[0].value + ", " + $('#applicant_correspondance_address_country')[0].value
+	    $('.printForm.office')[0].innerText = $('#organization_name')[0].value
+
+
+
 
 	    $('.form_applicant_photo').attr('src', URL.createObjectURL($('#applicant_photo')[0].files[0]));
 	    $('.form_applicant_signature').attr('src', URL.createObjectURL($('#applicant_signature')[0].files[0]));
 
-		console.log($('[name="select_nominee"]')[0].checked)
-		console.log($('#nominee_thumb_print'))
+	    if(!$('[name="select_nominee"]')[0].checked){
+	    	$('.nomineeDiv').hide()
+	    }
     	if($('[name="select_nominee"]')[0].checked){
     		$('.form_nominee_right_thumb_photo').attr('src', URL.createObjectURL($('#nominee_thumb_print')[0].files[0]));
     	    $('.form_nominee_photo').attr('src', URL.createObjectURL($('#nominee_photo')[0].files[0]));
