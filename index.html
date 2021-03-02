@@ -233,7 +233,7 @@
 
 		  	<div class=" col-md-4">
 				<label for="applicant_age" class="form-label">Age / उमेर  <span class="text-danger"> * </span></label>
-				<input type="number" class="form-control" name="age" id="applicant_age" placeholder="43" replaceLater>
+				<input type="text" class="form-control" name="age" id="applicant_age" placeholder="43" replaceLater>
 			</div>
 
 			<div class=" col-md-4">
@@ -430,7 +430,7 @@
 			<div class="head col-md-12">Permanent Address (Write Address Same As Citizenship) / स्थाई ठेगाना (ठेगाना नागरिकता अनुसार लेख्नुहोस )</div>
 
 			<div class="col-md-12">
-				<input class="form-check-input" type="checkbox" value="" name="permanent-address-checkbox" id="permanent-address-checkbox">
+				<input class="form-check-input" type="checkbox" value="" name="permanent_address_checkbox" id="permanent-address-checkbox">
 				<label class="form-check-label" for="permanent-address-checkbox">
 				    Same as Correspondence Address / पत्राचार ठेगाना जस्तै 
 				</label>
@@ -642,7 +642,7 @@
 				
 				<div class="col-md-6">
 					<label class="form-label" for="applicant_photo">Applicant's Photo / आवेदकको फोटो <span class="text-danger"> *</span> </label>
-					<input type="file" accept=".png, .jpeg, .jpg" name="applicant_photo" class="form-control" id="applicant_photo" replaceLater >
+					<input type="file" accept=".png, .jpeg, .jpg" name="applicant_pic" class="form-control" id="applicant_photo" replaceLater >
 				</div>
 
 				<div class="col-md-6">
@@ -652,12 +652,12 @@
 
 				<div class="col-md-6">
 					<label class="form-label" for="applicant_sign">Applicant's Signature / आवेदक हस्ताक्षर <span class="text-danger"> *</span> </label>
-					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="signature" id="applicant_signature" replaceLater >
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_sign" id="applicant_signature" replaceLater >
 				</div>
 
 				<div class="col-md-6">
 					<label class="form-label" for="applicant_thumb_print">Applicant's Thumb Print / आवेदकको ल्याप्चे<span class="text-danger"> *</span> </label>
-					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="thumb_print" id="applicant_thumb_print" replaceLater >
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_thumb_print" id="applicant_thumb_print" replaceLater >
 				</div>
 
 				<div class="col-md-6">
@@ -726,11 +726,11 @@
 			</div>
 			<div class="col-md-4">
 				<label class="form-label" for="applied_share_units">Applied Share Quantity (Units)<span class="text-danger"> * </span></label>
-				<input type="number" class="form-control" name="applied_kitta_qty" id="applied_share_units" placeholder="100" replaceLater>	
+				<input type="text" class="form-control" name="applied_kitta_qty" id="applied_share_units" placeholder="100" replaceLater>	
 			</div>
 			<div class="col-md-4">
 				<label class="form-label" for="total_amount">Total Amount Paid<span class="text-danger"> * </span></label>
-				<input type="number" class="form-control" name="total_amount" id="total_amount" placeholder="10500" disabled replaceLater >	
+				<input type="text" class="form-control" name="total_amount" id="total_amount" placeholder="10500" disabled replaceLater >	
 			</div>
 
 			<div class="col-md-4">
@@ -1062,7 +1062,7 @@
 		<div class="row gy-4 gx-5 citizenship-details">
 			<div class=" col-md-4">
 				<label for="applicant_citizenship_number" class="form-label">Citizenship Number / नागरिकता नम्बर <span class="text-danger"> * </span></label>
-				<input type="number" class="form-control" name="citizenship_number" id="applicant_citizenship_number" placeholder="2134" replaceLater>
+				<input type="text" class="form-control" name="citizenship_number" id="applicant_citizenship_number" placeholder="2134" replaceLater>
 			</div>
 			<div class=" col-md-4">
 				<label for="applicant_citizenship_issue_district" class="form-label">Citizenship Issue District  <span class="text-danger"> * </span></label>
@@ -1207,7 +1207,7 @@
 
 										<div class="col-md-4">
 											<label class="form-label" for="nominee_reference_document_number">Citizenship / Passport / Birth Certificate (नागरिकता / पासपोर्ट / जन्म प्रमाणपत्र)<span class="text-danger"> * </span></label>
-											<input type="number" class="form-control" name="nominee_reference_document_number" id="nominee_reference_document_number" placeholder="098765" replaceLater>	
+											<input type="text" class="form-control" name="nominee_reference_document_number" id="nominee_reference_document_number" placeholder="098765" replaceLater>	
 										</div>
 
 										<div class="col-md-4">
@@ -1222,7 +1222,7 @@
 										
 										<div class="col-md-4">
 											<label class="form-label" for="nominee_age">Age <span class="text-danger"> * </span></label>
-											<input type="number" class="form-control" name="nominee_age" id="nominee_age" placeholder="18" replaceLater>	
+											<input type="text" class="form-control" name="nominee_age" id="nominee_age" placeholder="18" replaceLater>	
 										</div>
 
 										<div class="col-md-4"></div>
@@ -1484,7 +1484,9 @@
 			    method: 'POST',
 			    body: dataJson,
 			    contentType: 'multipart/form-data'
-		  	}).then(response => response.json()).then(data => { 
+		  	})
+		  	// .then(res=> console.log(res))
+		  	.then(response => response.json()).then(data => { 
 				$('.loader').hide()
 		  		console.log(data)
 		  		window.alert(data.message) 
